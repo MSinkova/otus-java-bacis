@@ -17,7 +17,7 @@ public class Otus {
         checkColor(n, n, n);
         selectColor();
         compareNumbers();
-        addOrSubtractAndPrint(n,n,false);
+     //   addOrSubtractAndPrint(n,n,false);
     }
 
     public static void greetings() {
@@ -55,14 +55,6 @@ public class Otus {
         }
         else {
             System.out.println("a < b");
-        }
-    }
-
-    public static void addOrSubtractAndPrint(int initValue, int delta, boolean increment) {
-        if (increment == true) {
-            System.out.println(initValue + delta);
-        } else {
-            System.out.println(initValue - delta);
         }
     }
 }
