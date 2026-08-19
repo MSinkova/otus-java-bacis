@@ -5,13 +5,6 @@ import java.util.Scanner;
 public class Otus {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int n;
-        do {
-            System.out.println("Введите число от -5 до 5");
-            n = scanner.nextInt();
-        } while (n <-5 || n > 5);
-        System.out.println("Вы ввели число: " + n);
 
         greetings();
         checkColor(n, n, n);
