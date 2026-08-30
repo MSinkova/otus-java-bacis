@@ -5,6 +5,12 @@ import java.util.Scanner;
 public class Otus {
 
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Введите число: ");
+        int n = scanner.nextInt();
+
+        System.out.println("Вы ввели число" + n);
 
         greetings();
         checkColor(n, n, n);
