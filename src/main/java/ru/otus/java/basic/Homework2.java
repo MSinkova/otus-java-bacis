@@ -6,19 +6,19 @@ public class Homework2 {
     public static void main(String[] args) {
         Scanner scannerInt = new Scanner(System.in);
         Scanner scannerString = new Scanner(System.in);
-        int[] array = {25, 1, 9, 2, 20, 31};
+        int[] array = {1, 2, 3, 2, 20, 31};
 
-        System.out.println("Введите число: ");
-        int a = scannerInt.nextInt();
+        //System.out.println("Введите число: ");
+        //int a = scannerInt.nextInt();
 
-        System.out.println("Введите слово: ");
-        String line = scannerString.nextLine();
+        //System.out.println("Введите слово: ");
+        //String line = scannerString.nextLine();
 
         //funcPrintConcole(a, line);
         //arraySumArg(array);
         //fillArray(a, array);
-        //fillArraySumNumber(a, array);
-        arrayDifHalves(array);
+        fillArraySumNumber(3, array);
+        //arrayDifHalves(array);
 
     }
 
@@ -52,8 +52,8 @@ public class Homework2 {
     public static void fillArraySumNumber(int value, int[] array) {
         int sum = 0;
         for(int i = 0; i < array.length; i++) {
-           sum = array[i] + value;
-           System.out.println(sum);
+           array[i] += value;
+           System.out.println(array[i]);
        }
     }
 
