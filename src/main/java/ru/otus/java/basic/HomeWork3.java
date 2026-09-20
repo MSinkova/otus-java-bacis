@@ -3,16 +3,16 @@ package ru.otus.java.basic;
 public class HomeWork3 {
 
     public static void main(String[] args){
-        int[][] arr2d = {{-3,1},{1,5},{1,1}};
+        int[][] arr2d = {{-1000,-1},{-9,-5},{-1,-2}};
         int size = 5;
         char[][] array = new char[size][size];
         //System.out.println(sumOfPositiveElements(arr2d));
 
-        //printSquare(size);
-        //printArrayZeroDiagonal(array);
+        printSquare(size);
+        // printArrayZeroDiagonal(array);
         //System.out.println(findMax(arr2d));
         //print2DArray(array);
-        System.out.println(sumSecondLine(arr2d));
+        //System.out.println(sumSecondLine(arr2d));
 
     }
 
@@ -31,16 +31,19 @@ public class HomeWork3 {
 
     // ++ Реализовать метод, который принимает в качестве аргумента int size и печатает в консоль квадрат из символов * со сторонами соответствующей длины;
     public static void printSquare(int size) {
-        char[][] array = new char[size][size];
-        for(int i = 0; i < array.length; i++) {
-           for (int j = 0; j < array[i].length; j++) {
-               array[0][j] = '*';
-               array[j][0] = '*';
-               array[i][array[i].length - 1] = '*';
-               array[array[j].length - 1][j] = '*';
+        //char[][] array = new char[size][size];
+        for(int i = 0; i < size; i++) {
+           for (int j = 0; j < size; j++) {
+               System.out.print(" * ");
+               //array[0][j] = '*';
+               //array[j][0] = '*';
+               //array[i][array[i].length - 1] = '*';
+               //array[array[j].length - 1][j] = '*';
+               //array[i][size - 1] = '*';
+               //array[size - 1][j] = '*';
            }
+            System.out.println();
         }
-        print2DArray(array);
     }
 
 
@@ -51,10 +54,8 @@ public class HomeWork3 {
                 array[i][j]='*';
             }
         }
-        for(int i = 0; i < array.length -1; i++) {
-            for(int j = 0; j < array[i].length -1; j++) {
-                array[j][j] = '\0';
-            }
+        for(int j = 0; j < array[0].length -1; j++) {
+            array[j][j] = '\0';
         }
         array[array.length - 1][array[0].length - 1] = '\0';
         print2DArray(array);
@@ -62,7 +63,7 @@ public class HomeWork3 {
 
     //++Реализовать метод findMax(int[][] array) который должен найти и вернуть максимальный элемент массива;
     public static int findMax(int[][] array) {
-        int max = 0;
+        int max = Integer.MIN_VALUE;
         for(int i = 0; i < array.length; i++) {
             for(int j = 0; j < array[i].length; j++) {
                 if(array[i][j] > max) {
@@ -76,7 +77,7 @@ public class HomeWork3 {
     //Реализуйте метод, который считает сумму элементов второй строки двумерного массива, если второй строки не существует, то в качестве результата необходимо вернуть -1
     public static int sumSecondLine(int[][] array) {
        int sum = 0;
-       if (array == null || array.length < 1) {
+       if (array == null || array.length < 2) {
            return -1;
        }
        for (int j = 0; j < array[1].length; j++) {
