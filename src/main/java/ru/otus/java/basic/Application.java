@@ -28,6 +28,10 @@ public class Application {
         Box box2 = new Box(2, "Blue");
         box1.info();
         box2.info();
+        box2.setColor("Red");
+
+        //В коробку можно складывать предмет (если в ней нет предмета), или выкидывать его оттуда (только если предмет в ней есть), только при условии что коробка открыта (предметом читаем просто строку).
+        //        Выполнение методов должно сопровождаться выводом сообщений в консоль.
 
         box1.open();
         System.out.println(box1.getIsOpened());
@@ -38,5 +42,9 @@ public class Application {
             System.out.println(box1.getItem());
             box1.putItem("Шоколад");
         }
+        box2.discardItem();
+        box2.open();
+        box2.discardItem();
+        box1.discardItem();
     }
 }

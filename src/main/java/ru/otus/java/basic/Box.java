@@ -8,7 +8,7 @@ public class Box {
     Выполнение методов должно сопровождаться выводом сообщений в консоль.
      */
 
-    private int size;
+    final int size;
     private String color;
     private boolean isOpened;
     private String item;
@@ -45,28 +45,40 @@ public class Box {
     }
 
     public boolean open() {
-        if(!isOpened) {
-            System.out.println("Коробка открыта");
-        }
         return isOpened = true;
     }
 
     public boolean close() {
-        if(isOpened) {
-            System.out.println("Коробка закрыта");
-        }
         return isOpened = false;
     }
 
     //Почему этот метод всегда возвращает null ?
-    public String putItem (String item) {
-        if(item == null) {
-            this.item = item;
-            System.out.println("Положили предмет: " + item);
-            return item;
-        } else {
-            System.out.println("Коробка не пуста, там лежит предемет: " + item);
-            return item;
+    public String putItem (String newItem) {
+        if(isOpened) {
+           if(this.item == null) {
+               this.item = newItem;
+               System.out.println("Положили предмет: " + newItem);
+               return newItem;
+           } else {
+               System.out.println("Коробка не пуста, там лежит предемет: " + newItem);
+           }
+        } else if(!isOpened) {
+            System.out.println("Положить предмет можно только в открытую коробку");
         }
+        return item;
+    }
+
+    public String discardItem() {
+        if(isOpened) {
+            if(item != null) {
+                System.out.println("Из коробки выложели предмет: " + item);
+                return item = null;
+            } else {
+                System.out.println("В коробке ничего нет");
+            }
+        } else if (!isOpened) {
+            System.out.println("Выложить предмето можно только из откратой коробке");
+        }
+        return item;
     }
 }
